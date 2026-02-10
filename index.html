@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王智城 Roy Wang | 應用語言學 & 語言教育工作者</title>
+    <meta name="description" content="王智城 Roy Wang - 英國愛丁堡大學應用語言學碩士，專長語料庫語言學、社會語言學、中英雙語教學。TOEIC 990 / IELTS 8.0 持有人。">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0f4c81;     /* Classic Blue - Academic & Trust */
+            --secondary: #c9a961;   /* Gold - Excellence */
+            --accent: #2a9d8f;      /* Teal - Language/Education */
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --text: #333333;
+            --text-light: #666666;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0; 
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Noto Serif TC', 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .lang-toggle {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .lang-toggle:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: var(--primary);
+            opacity: 0.05;
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(15, 76, 129, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .profile-img-container {
+            width: 350px;
+            height: 350px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .badge-1 {
+            top: 20%;
+            left: -20px;
+            animation-delay: 0s;
+        }
+
+        .badge-2 {
+            bottom: 20%;
+            right: -20px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .highlight-box h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .credentials-list {
+            list-style: none;
+        }
+
+        .credentials-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .credentials-list i {
+            color: var(--secondary);
+        }
+
+        /* Timeline (Education & Experience) */
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 150px;
+            top: 10px;
+            bottom: -3rem;
+            width: 2px;
+            background: #e0e0e0;
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: var(--secondary);
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+            position: relative;
+            margin-left: 2rem;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+
+        .timeline-content h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .timeline-content .institution {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .timeline-content .details {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(42, 157, 143, 0.1);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: linear-gradient(to bottom, #f8f9fa, white);
+        }
+
+        .skills-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        /* Documents/Portfolio Section */
+        .documents {
+            background: white;
+        }
+
+        .doc-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .doc-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid #e0e0e0;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary);
+        }
+
+        .doc-preview {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doc-preview::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+            opacity: 0.3;
+        }
+
+        .doc-info {
+            padding: 1.5rem;
+        }
+
+        .doc-info h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .doc-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .doc-tag {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        /* Research Section */
+        .research-item {
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .research-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .research-meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        /* Personal Gallery Section */
+        .gallery {
+            background: linear-gradient(to bottom, #f8f9fa, white);
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 250px;
+            gap: 1rem;
+            padding: 0 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(15, 76, 129, 0.9), transparent);
+            padding: 1.5rem 1rem 1rem;
+            color: white;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Different sizes for visual interest */
+        .gallery-item.tall {
+            grid-row: span 2;
+        }
+
+        .gallery-item.wide {
+            grid-column: span 2;
+        }
+
+        .gallery-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            color: var(--secondary);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            background: rgba(0,0,0,0.7);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 200px;
+                gap: 0.5rem;
+                padding: 0 1rem;
+            }
+            
+            .gallery-item.large, .gallery-item.wide {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-item.large, .gallery-item.wide, .gallery-item.tall {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+
+
+        /* Footer */
+        footer {
+            background: #0f0f1e;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Language-specific display */
+        .lang-en { display: none; }
+        .lang-zh { display: block; }
+
+        body.english .lang-en { display: block; }
+        body.english .lang-zh { display: none; }
+        body.english .lang-zh-inline { display: none; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .profile-img-container {
+                width: 250px;
+                height: 250px;
+                margin-top: 2rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item::before {
+                left: 20px;
+            }
+            
+            .timeline-date {
+                text-align: left;
+                margin-bottom: 0.5rem;
+            }
+            
+            .timeline-content {
+                margin-left: 0;
+            }
+            
+            .timeline-content::before {
+                left: -30px;
+            }
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">ROY WANG</a>
+            <ul class="nav-links">
+                <li><a href="#about" class="lang-zh">關於我</a><a href="#about" class="lang-en">About</a></li>
+                <li><a href="#education" class="lang-zh">學歷</a><a href="#education" class="lang-en">Education</a></li>
+                <li><a href="#experience" class="lang-zh">經歷</a><a href="#experience" class="lang-en">Experience</a></li>
+                <li><a href="#gallery" class="lang-zh">生活足跡</a><a href="#gallery" class="lang-en">Gallery</a></li>
+                <li><a href="#research" class="lang-zh">研究發表</a><a href="#research" class="lang-en">Research</a></li>
+                <li><a href="#documents" class="lang-zh">文件檔案</a><a href="#documents" class="lang-en">Documents</a></li>
+                <li><a href="#contact" class="lang-zh">聯絡我</a><a href="#contact" class="lang-en">Contact</a></li>
+                <li><button class="lang-toggle" onclick="toggleLanguage()">
+                    <span class="lang-zh">EN</span>
+                    <span class="lang-en">中文</span>
+                </button></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content fade-in">
+                <h1 class="lang-zh">王智城 <span style="color: var(--secondary);">Roy Wang</span></h1>
+                <h1 class="lang-en">Roy <span style="color: var(--secondary);">Wang</span> 王智城</h1>
+                
+                <p class="subtitle lang-zh">應用語言學實務研究者｜中英雙語教師</p>
+                <p class="subtitle lang-en">Applied Linguist | Bilingual Educator | Researcher</p>
+                
+                <p class="tagline lang-zh">
+                    英國愛丁堡大學應用語言學碩士（Merit），專長語料庫語言學、社會語言學與二語習得。五年以上英語教學經驗，致力於將語言學研究轉化為高效能教學實踐。
+                </p>
+                <p class="tagline lang-en">
+                    MSc Applied Linguistics (Merit) from University of Edinburgh. Specializing in corpus linguistics, sociolinguistics, and SLA. 5+ years English teaching experience bridging research and pedagogy.
+                </p>
+                    <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">5000+</span>
+                        <span class="stat-label lang-zh">語言學習軟體使用人數</span>
+                        <span class="stat-label lang-en">Users' Number of Web-based Tools</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label lang-zh">教導學生數</span>
+                        <span class="stat-label lang-en">Number of Served Students</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label lang-zh">設計語言教學軟體</span>
+                        <span class="stat-label lang-en">Number of Web-based Tools</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">7+</span>
+                        <span class="stat-label lang-zh">教學年資</span>
+                        <span class="stat-label lang-en">Years of teaching</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">990</span>
+                        <span class="stat-label">TOEIC</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">8.0</span>
+                        <span class="stat-label">IELTS</span>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary lang-zh">
+                        <i class="fas fa-envelope"></i> 聯絡我
+                    </a>
+                    <a href="#contact" class="btn btn-primary lang-en">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                    <a href="#documents" class="btn btn-secondary lang-zh">
+                        <i class="fas fa-file-alt"></i> 查看文件
+                    </a>
+                    <a href="#documents" class="btn btn-secondary lang-en">
+                        <i class="fas fa-file-alt"></i> View Documents
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image fade-in">
+                <div class="profile-img-container">
+                    <!-- Upload your photo to a folder named 'images' and rename it to profile.jpg -->
+                    <img src="images/profile.jpg" alt="王智城 Roy Wang" onerror="this.src='https://via.placeholder.com/350x350/0f4c81/ffffff?text=RW'">
+                </div>
+                <div class="floating-badge badge-1">
+                    <i class="fas fa-award"></i>
+                    <span class="lang-zh">愛丁堡大學碩士</span>
+                    <span class="lang-en">Edinburgh MSc</span>
+                </div>
+                <div class="floating-badge badge-2">
+                    <i class="fas fa-certificate"></i>
+                    <span class="lang-zh">教育部對外華語教學認證</span>
+                    <span class="lang-en">TCSL Certified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-header fade-in">
+            <h2 class="lang-zh">專業簡介</h2>
+            <h2 class="lang-en">Professional Profile</h2>
+            <p class="lang-zh">橫跨學術研究與實務教學的語言教育專家</p>
+            <p class="lang-en">Bridging academic research and language pedagogy</p>
+        </div>
+        
+        <div class="about-grid">
+            <div class="about-content fade-in">
+                <h3 class="lang-zh">教學理念&專業</h3>
+                <h3 class="lang-en">Teaching Philosophy & Professionalism</h3>
+                <p class="lang-zh">
+                    全心投入語言教學及研究的華語和英語老師。英語教學經驗七年，教學對象涵蓋國中到成人；內容從基礎文法到學術寫作到證照考試；除現場教學亦參與編撰題目、教學軟體SaaS 設計、AI 融入語言教/學。年輕有活力且負責任，教學注重互動及口說，並自編文法生詞整理教材。
+                </p>
+                <p class="lang-en">
+                    A dedicated Chinese and English language teacher with seven years of experience teaching students from junior high to adults. Expertise ranges from basic grammar to academic writing and test preparation (TOEIC, IELTS). In addition to teaching, also skill at material editing as well as web-based tools (SaaS) designs and programming with AI tools. Young, energetic, and responsible, with a focus on interactive speaking activities and self-developed teaching materials.
+                </p>
+                <p class="lang-zh">
+                    我希望將最適合學生的語言學理論與教學方法結合，為學生提供高效且有趣的學習體驗。今年於中央大學探索英文為授課語言（EMI）與問題導向學習（PBL）的結合；於台灣師範大學研究 AI 融入語言教學以及網頁軟體電腦輔助語言教學 (CALL)。
+                </p>
+                <p class="lang-en">
+                    I aim to integrate suitable linguistic theories with teaching methodologies to provide efficient and enjoyable learning experiences. Currently exploring the integration of English as a Medium of Instruction (EMI) and Problem-Based Learning (PBL) at National Central University. Working on computer assisted language learning (CALL) in National Taiwan Normal University with a view to integrating AI in language learning and teaching.
+                </p>
+            </div>
+            
+            <div class="about-content fade-in">
+                <div class="highlight-box">
+                    <h4 class="lang-zh"><i class="fas fa-star"></i> 核心專長</h4>
+                    <h4 class="lang-en"><i class="fas fa-star"></i> Core Expertise</h4>
+                    <ul class="credentials-list">
+                        <li><i class="fas fa-check-circle"></i> 
+                            <span class="lang-zh">語料庫語言學 (Corpus Linguistics)</span>
+                            <span class="lang-en">Corpus Linguistics</span>
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> 
+                            <span class="lang-zh">電腦輔助語言教學 (Computer Assisted Language Learning)</span>
+                            <span class="lang-en">Computer Assisted Language Learning</span>
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> 
+                            <span class="lang-zh">社會語言學與語言意識形態</span>
+                            <span class="lang-en">Sociolinguistics & Language Ideologies</span>
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> 
+                            <span class="lang-zh">二語語法對比與習得</span>
+                            <span class="lang-en">Second Language Acquisition & Contrastive Grammar</span>
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> 
+                            <span class="lang-zh">英文為授課語言 (EMI)</span>
+                            <span class="lang-en">English as a Medium of Instruction (EMI)</span>
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> 
+                            <span class="lang-zh">R語言統計與多層次模型</span>
+                            <span class="lang-en">R Statistics & Multi-level Modeling</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" style="background: #f8f9fa;">
+        <div class="section-header fade-in">
+            <h2 class="lang-zh">教育背景</h2>
+            <h2 class="lang-en">Education</h2>
+        </div>
+        
+        <div class="timeline-container">
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2023 - 2024</div>
+                <div class="timeline-content">
+                    <span class="institution">The University of Edinburgh, UK</span>
+                    <h3 class="lang-zh">應用語言學碩士 (MSc Applied Linguistics)</h3>
+                    <h3 class="lang-en">MSc Applied Linguistics</h3>
+                    <p class="details lang-zh">
+                        畢業等級：優良 (Merit)<br>
+                        論文：台灣2030雙語政策的語言意識形態研究（獲高度評價畢業論文獎）<br>
+                        專修：語料庫輔助論述分析、社會語言學、二語習得
+                    </p>
+                    <p class="details lang-en">
+                        Degree Classification: Merit<br>
+                        Dissertation: Language Ideologies toward Taiwan's 2030 Bilingual Policy<br>
+                        Award: Highly Commended Dissertation Award<br>
+                        Focus: Corpus-assisted discourse analysis, sociolinguistics, SLA
+                    </p>
+                    <span class="tag">Merit</span>
+                    <span class="tag">Dissertation Award</span>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2022 - 2023</div>
+                <div class="timeline-content">
+                    <span class="institution">La Universidad de Deusto, Spain</span>
+                    <h3 class="lang-zh">現代語言學位交換 (Modern Language Exchange)</h3>
+                    <h3 class="lang-en">Modern Language Exchange Program</h3>
+                    <p class="details lang-zh">西班牙語言與文化研習</p>
+                    <p class="details lang-en">Spanish language and cultural studies</p>
+                    <span class="tag">Spanish A2</span>
+                    <span class="tag">Cultural Exchange</span>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2019 - 2023</div>
+                <div class="timeline-content">
+                    <span class="institution">National Central University, Taiwan</span>
+                    <h3 class="lang-zh">英美文學學士 (BA in English)</h3>
+                    <h3 class="lang-en">Bachelor of Arts in English</h3>
+                    <p class="details lang-zh">
+                        GPA: 4.25/4.3（書卷獎 x6）<br>
+                        雙專長：華語文教學學分學程（2025年取得教育部對外華語教學能力證書）<br>
+                        榮譽：斐陶斐榮譽學會會員 (Phi Tau Phi)
+                    </p>
+                    <p class="details lang-en">
+                        GPA: 4.25/4.3 (Dean's List x6)<br>
+                        Minor: Teaching Chinese as a Second Language (TCSL Certificate)<br>
+                        Honors: Phi Tau Phi Scholastic Honor Society
+                    </p>
+                    <span class="tag">GPA 4.25/4.3</span>
+                    <span class="tag">Phi Tau Phi</span>
+                    <span class="tag">TCSL Certified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" style="background: white;">
+        <div class="section-header fade-in">
+            <h2 class="lang-zh">工作經歷</h2>
+            <h2 class="lang-en">Professional Experience</h2>
+        </div>
+        
+        <div class="timeline-container">
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2025 - Present</div>
+                <div class="timeline-content">
+                    <span class="institution lang-zh">菁英語言教育中心 & 半熟語言所｜正式教師</span>
+                    <span class="institution lang-en">Elite Language Education Center & Half-cooked Language Institute</span>
+                    <h3 class="lang-zh">英語教師</h3>
+                    <h3 class="lang-en">English Instructor</h3>
+                    <p class="details lang-zh">
+                        線上精緻整合式英文課、課後批改作業、課前編輯整合式教材。實體/線上英語詞彙、寫作、閱讀、文法、多益教師。
+                    </p>
+                    <p class="details lang-en">
+                        Online integrated English courses, assignment grading, and material design. Teaching vocabulary, writing, reading, grammar, and TOEIC preparation.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2025 - Present</div>
+                <div class="timeline-content">
+                    <span class="institution">National Taiwan Normal University</span>
+                    <h3 class="lang-zh">酷英平台碩士級專任助理</h3>
+                    <h3 class="lang-en">Research Assistant, CoolEnglish Platform</h3>
+                    <p class="details lang-zh">
+                        維護、建置、發想、設計教育部國教署酷英(CoolEnglish)英語線上學習平台大專部課程及語言學習軟體；AI應用語言教學。
+                    </p>
+                    <p class="details lang-en">
+                        Maintainning, devising, developing, designing university-level courses for MOE CoolEnglish platform and developing web-based tool for AI integration. AI applications in language teaching.
+                    </p>
+                    <span class="tag">AI in Education</span>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2025 - Present</div>
+                <div class="timeline-content">
+                    <span class="institution">TKB Taiwan Knowledge Bank</span>
+                    <h3 class="lang-zh">洋碩美語正式教師</h3>
+                    <h3 class="lang-en">English Instructor</h3>
+                    <p class="details lang-zh">1v1-1v5英語口說課程；針對學生需求設計證照家教課程。</p>
+                    <p class="details lang-en">Small group speaking courses (1v1 to 1v5); customized certification exam preparation.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2022 - 2023</div>
+                <div class="timeline-content">
+                    <span class="institution">National Central University</span>
+                    <h3 class="lang-zh">網路語言研究助理</h3>
+                    <h3 class="lang-en">Research Assistant</h3>
+                    <p class="details lang-zh">
+                        收集、分析、注譯、翻譯網路流行語，包含交際、象徵語、語用措辭，跨語文化風格展演；文獻研究與摘要撰寫。
+                    </p>
+                    <p class="details lang-en">
+                        Collected and analyzed internet slang and digital discourse; cross-cultural stylistic analysis; literature review and annotation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="section-header fade-in">
+            <h2 class="lang-zh">專業技能</h2>
+            <h2 class="lang-en">Skills & Competencies</h2>
+        </div>
+        
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-language"></i> <span class="lang-zh">語言能力</span><span class="lang-en">Languages</span></h3>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="lang-zh">中文（母語）</span>
+                        <span class="lang-en">Chinese (Native)</span>
+                        <span>100%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 100%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="lang-zh">英文（近母語）</span>
+                        <span class="lang-en">English (Near-native)</span>
+                        <span>C2</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="lang-zh">西班牙文</span>
+                        <span class="lang-en">Spanish</span>
+                        <span>B1</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 40%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-tools"></i> <span class="lang-zh">研究工具</span><span class="lang-en">Research Tools</span></h3>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>R Language / Statistics</span>
+                        <span>Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>LancsBox / AntConc / CQPWeb</span>
+                        <span>Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>Multi-level Modeling / ANOVA</span>
+                        <span>Proficient</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-chalkboard-teacher"></i> <span class="lang-zh">教學專長</span><span class="lang-en">Teaching</span></h3>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>EMI / PBL Integration</span>
+                        <span>Expert</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>Academic Writing</span>
+                        <span>Expert</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>Test Prep (TOEIC/IELTS)</span>
+                        <span>Expert</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" style="background: white;">
+        <div class="section-header fade-in">
+            <h2 class="lang-zh">研討會發表</h2>
+            <h2 class="lang-en">Research & Presentation</h2>
+        </div>
+        
+        <div class="fade-in">
+            <div class="research-item">
+                <h3>Language Ideologies toward Taiwan's 2030 Bilingual Policy: Online Perception and Realities on the Ground</h3>
+                <div class="research-meta">Bilingual Matters Symposium 2025, University of Edinburgh (Virtual) | Mar 2025</div>
+                <p>Examining public and teacher perceptions of Taiwan's bilingual policy using corpus-assisted discourse analysis and ethnographic interviews.</p>
+            </div>
+            
+            <div class="research-item">
+                <h3>Japanese and English L1 Learners' Acquisition of Chinese Connective Device yinwei</h3>
+                <div class="research-meta">The 14th World Conference on Chinese Language Teaching, Taitung, Taiwan | Nov 2024</div>
+                <p>Learner corpus-based study on Chinese connective acquisition (Co-authored with Li, M.-Y.).</p>
+            </div>
+            
+            <div class="research-item">
+                <h3>Jing-Jing Style: Playful Stylization and Translingual Politics in Digital Discourse</h3>
+                <div class="research-meta">EUROCALL 2024 Conference, Trnava, Slovakia (Virtual) | Aug 2024</div>
+                <p>Analysis of internet slang and translingual practices in digital communication (Co-authored with Liang, M.-Y., & Li, S.N.).</p>
+            </div>
+            
+            <div class="research-item">
+                <h3>The Indexicality of Deference: The Chinese Second Person Pronoun Nin</h3>
+                <div class="research-meta">7th International Symposium on Chinese Language and Discourse (ISCLD), Singapore | 2024</div>
+            </div>
+            
+            <div class="research-item">
+                <h3 class="lang-zh">訪談：2030雙語政策的理想目標，九位第一線教師眼中的骨感現實</h3>
+                <h3 class="lang-en">Interview: The Reality of 2030 Bilingual Policy from Teachers' Perspective</h3>
+                <div class="research-meta">The News Lens 關鍵評論網 | July 2024</div>
+                <p><a href="https://www.thenewslens.com/article/205087" target="_blank" style="color: var(--primary);">View Article <i class="fas fa-external-link-alt"></i></a></p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Personal Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="section-header fade-in">
+            <h2 class="lang-zh">生活足跡</h2>
+            <h2 class="lang-en">Life & Journey</h2>
+            <p class="lang-zh">研究之餘，探索世界的每一個角落</p>
+            <p class="lang-en">Exploring the world beyond research and teaching</p>
+        </div>
+        
+        <div class="gallery-grid">
+            <!-- Photo 1: Professional/Academic -->
+            <div class="gallery-item wide fade-in" onclick="openLightbox(this)">
+                <img src="images/Pic_2.jpg" alt="學術發表 Presenting">
+                <div class="gallery-overlay">
+                    <h4 class="lang-zh">學術發表</h4>
+                    <h4 class="lang-en">Academic Presentation</h4>
+                    <p class="lang-zh">分享研究成果</p>
+                    <p class="lang-en">Sharing research findings</p>
+                </div>
+            </div>
+            
+            <!-- Photo 2: Portrait/Life -->
+            <div class="gallery-item fade-in" onclick="openLightbox(this)">
+                <img src="images/Pic_1.jpg" alt="日常生活 Daily Life">
+                <div class="gallery-overlay">
+                    <h4 class="lang-zh">日常</h4>
+                    <h4 class="lang-en">Daily Life</h4>
+                </div>
+            </div>
+            
+            <!-- Photo 3: Tall portrait -->
+            <div class="gallery-item tall fade-in" onclick="openLightbox(this)">
+                <img src="images/My_photo.jpg" alt="個人寫真 Portrait">
+                <div class="gallery-overlay">
+                    <h4 class="lang-zh">專業形象</h4>
+                    <h4 class="lang-en">Professional</h4>
+                </div>
+            </div>
+            
+            <!-- Photo 4: Travel/Scotland -->
+            <div class="gallery-item fade-in" onclick="openLightbox(this)">
+                <img src="images/Pic_5.jpg" alt="愛丁堡 Edinburgh">
+                <div class="gallery-overlay">
+                    <h4 class="lang-zh">愛丁堡</h4>
+                    <h4 class="lang-en">Edinburgh</h4>
+                    <p class="lang-zh">英國留學時光</p>
+                    <p class="lang-en">Study abroad memories</p>
+                </div>
+            </div>
+            
+            <!-- Photo 5: Spain/Travel -->
+            <div class="gallery-item fade-in" onclick="openLightbox(this)">
+                <img src="images/Pic_6.jpg" alt="西班牙 Spain">
+                <div class="gallery-overlay">
+                    <h4 class="lang-zh">西班牙</h4>
+                    <h4 class="lang-en">Spain</h4>
+                    <p class="lang-zh">交換學生生活</p>
+                    <p class="lang-en">Exchange student life</p>
+                </div>
+            </div>
+            
+            <!-- Photo 6: Large feature -->
+            <div class="gallery-item large fade-in" onclick="openLightbox(this)">
+                <img src="images/Pic_7.jpg" alt="研討會 Conference">
+                <div class="gallery-overlay">
+                    <h4 class="lang-zh">國際研討會</h4>
+                    <h4 class="lang-en">International Conference</h4>
+                    <p class="lang-zh">與全球學者交流</p>
+                    <p class="lang-en">Connecting with global scholars</p>
+                </div>
+            </div>
+            
+            <!-- Photo 7: Casual/Teaching -->
+            <div class="gallery-item fade-in" onclick="openLightbox(this)">
+                <img src="images/Pic_3.jpg" alt="教學 Teaching">
+                <div class="gallery-overlay">
+                    <h4 class="lang-zh">發表現場</h4>
+                    <h4 class="lang-en">Conference Presentation</h4>
+                </div>
+            </div>
+            
+            <!-- Photo 8: Research/Lab -->
+            <div class="gallery-item wide fade-in" onclick="openLightbox(this)">
+                <img src="images/Pic_8.jpg" alt="研究 Research">
+                <div class="gallery-overlay">
+                    <h4 class="lang-zh">研究日常</h4>
+                    <h4 class="lang-en">Research Life</h4>
+                    <p class="lang-zh">中央大學文學院</p>
+                    <p class="lang-en">NCU College of Humanities</p>
+                </div>
+            </div>
+            
+            <!-- Pic_4 - Additional photo -->
+            <div class="gallery-item fade-in" onclick="openLightbox(this)">
+                <img src="images/Pic_4.jpg" alt="生活片段 Moment">
+                <div class="gallery-overlay">
+                    <h4 class="lang-zh">生活片段</h4>
+                    <h4 class="lang-en">Life Moment</h4>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-img" src="" alt="Full size">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </section>
+
+
+    <!-- Documents Section -->
+    <section id="documents" class="documents">
+        <div class="section-header fade-in">
+            <h2 class="lang-zh">證照與文件</h2>
+            <h2 class="lang-en">Certificates & Documents</h2>
+            <p class="lang-zh">點擊查看完整PDF檔案</p>
+            <p class="lang-en">Click to view full PDF documents</p>
+        </div>
+        
+        <div class="doc-grid">
+            <!-- CV -->
+            <a href="documents/CV_Roy.pdf" target="_blank" class="doc-card fade-in">
+                <div class="doc-preview">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="doc-info">
+                    <h3 class="lang-zh">完整履歷 CV</h3>
+                    <h3 class="lang-en">Curriculum Vitae</h3>
+                    <p class="lang-zh">詳細學經歷與專業技能</p>
+                    <p class="lang-en">Detailed academic and professional background</p>
+                    <span class="doc-tag">PDF</span>
+                </div>
+            </a>
+            
+            <!-- Certificates Combined -->
+            <a href="documents/certificates.pdf" target="_blank" class="doc-card fade-in">
+                <div class="doc-preview" style="background: linear-gradient(135deg, #2a9d8f 0%, #264653 100%);">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="doc-info">
+                    <h3 class="lang-zh">證照、論文與獎項</h3>
+                    <h3 class="lang-en">Certificates & Awards</h3>
+                    <p class="lang-zh">愛丁堡學位證書、雅思、多益、斐陶斐等</p>
+                    <p class="lang-en">Edinburgh degree, IELTS, TOEIC, Phi Tau Phi</p>
+                    <span class="doc-tag">Portfolio</span>
+                </div>
+            </a>
+            
+            <!-- Autobiography -->
+            <a href="documents/autobiography.pdf" target="_blank" class="doc-card fade-in">
+                <div class="doc-preview" style="background: linear-gradient(135deg, #e9c46a 0%, #f4a261 100%);">
+                    <i class="fas fa-user-edit"></i>
+                </div>
+                <div class="doc-info">
+                    <h3 class="lang-zh">履歷自傳</h3>
+                    <h3 class="lang-en">Cover Letter / Autobiography</h3>
+                    <p class="lang-zh">中英雙語自傳與求職信</p>
+                    <p class="lang-en">Bilingual cover letter and personal statement</p>
+                    <span class="doc-tag">CN/EN</span>
+                </div>
+            </a>
+            
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-content fade-in">
+            <h2 class="lang-zh">聯絡我</h2>
+            <h2 class="lang-en">Get In Touch</h2>
+            <p class="lang-zh">期望將學術專業與教學熱誠貢獻於貴單位</p>
+            <p class="lang-en">Ready to contribute academic expertise and teaching passion to your institution</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+886966726858">0966-726-858</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:c.wanglanguage@outlook.com">c.wanglanguage@outlook.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:roy.chihchengwang@gmail.com">roy.chihchengwang@gmail.com</a>
+                </div>
+            </div>
+            
+            <div class="hero-buttons" style="justify-content: center;">
+                <a href="mailto:c.wanglanguage@outlook.com" class="btn btn-primary" style="background: var(--secondary);">
+                    <i class="fas fa-paper-plane"></i> 
+                    <span class="lang-zh">發送郵件</span>
+                    <span class="lang-en">Send Email</span>
+                </a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" title="Academia.edu"><i class="fas fa-university"></i></a>
+                <a href="#" title="ResearchGate"><i class="fas fa-book"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 王智城 Roy Wang. All Rights Reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+            <span class="lang-zh">最後更新：2025年2月</span>
+            <span class="lang-en">Last Updated: February 2025</span>
+        </p>
+    </footer>
+
+    <script>
+        // Language Toggle
+        function toggleLanguage() {
+            document.body.classList.toggle('english');
+            localStorage.setItem('language', document.body.classList.contains('english') ? 'en' : 'zh');
+        }
+
+        // Check saved language preference
+        if (localStorage.getItem('language') === 'en') {
+            document.body.classList.add('english');
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+        // Gallery Lightbox Functions
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const caption = element.querySelector('.gallery-overlay h4').textContent;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightboxImg.src = img.src;
+            lightboxCaption.textContent = caption;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+    </script>
+</body>
+</html>
