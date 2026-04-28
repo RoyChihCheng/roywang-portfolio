@@ -188,11 +188,13 @@
 
         .hero-stats {
             display: flex;
-            gap: 2rem;
+            flex-wrap: wrap;
+            gap: 1.5rem 1.75rem;
             margin-bottom: 2rem;
         }
 
         .stat {
+            flex: 0 1 86px;
             text-align: center;
         }
 
@@ -208,6 +210,10 @@
             color: var(--text-light);
             text-transform: uppercase;
             letter-spacing: 1px;
+            display: block;
+            line-height: 1.55;
+            word-break: keep-all;
+            overflow-wrap: normal;
         }
 
         .hero-buttons {
@@ -1017,9 +1023,9 @@
                         <span class="stat-label lang-en">Number of Web-based Tools</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">7</span>
-                        <span class="stat-label lang-zh">七年教學經驗</span>
-                        <span class="stat-label lang-en">Years of Teaching Experience</span>
+                        <span class="stat-number">7年</span>
+                        <span class="stat-label lang-zh">教學經驗</span>
+                        <span class="stat-label lang-en">Teaching Experience</span>
                     </div>
                     <div class="stat">
                         <span class="stat-number">990</span>
