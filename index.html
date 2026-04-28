@@ -546,6 +546,105 @@
             transition: width 1s ease;
         }
 
+        /* AI Tools Section */
+        .ai-tools {
+            background: #eef4f8;
+        }
+
+        .ai-tools-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .ai-tool-card {
+            background: white;
+            border: 1px solid rgba(15, 76, 129, 0.12);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(15, 76, 129, 0.08);
+            transition: var(--transition);
+        }
+
+        .ai-tool-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 45px rgba(15, 76, 129, 0.14);
+        }
+
+        .tool-preview {
+            min-height: 230px;
+            background: linear-gradient(135deg, #0f4c81 0%, #2a9d8f 100%);
+            padding: 1.2rem;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .tool-preview img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(15, 76, 129, 0.22);
+        }
+
+        .ai-tool-body {
+            padding: 1.6rem;
+        }
+
+        .ai-tool-body h3 {
+            color: var(--primary);
+            font-size: 1.35rem;
+            margin-bottom: 0.55rem;
+        }
+
+        .ai-tool-body p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .tool-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .tool-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .tool-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: white;
+            background: var(--primary);
+            text-decoration: none;
+            border-radius: 999px;
+            padding: 0.7rem 1.1rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .tool-link.secondary {
+            color: var(--primary);
+            background: transparent;
+            border: 1px solid var(--primary);
+        }
+
+        .tool-link:hover {
+            transform: translateY(-2px);
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
         /* Documents/Portfolio Section */
         .documents {
             background: white;
@@ -647,6 +746,14 @@
             font-size: 0.9rem;
             margin-bottom: 1rem;
             font-style: italic;
+        }
+
+        .research-category {
+            max-width: 900px;
+            margin: 0 auto 1rem;
+            color: var(--primary);
+            font-size: 1.35rem;
+            font-weight: 700;
         }
 
         /* Contact Section */
@@ -975,6 +1082,7 @@
                 <li><a href="#about" class="lang-zh">關於我</a><a href="#about" class="lang-en">About</a></li>
                 <li><a href="#education" class="lang-zh">學歷</a><a href="#education" class="lang-en">Education</a></li>
                 <li><a href="#experience" class="lang-zh">經歷</a><a href="#experience" class="lang-en">Experience</a></li>
+                <li><a href="#ai-tools" class="lang-zh">AI工具</a><a href="#ai-tools" class="lang-en">AI Tools</a></li>
                 <li><a href="#gallery" class="lang-zh">生活足跡</a><a href="#gallery" class="lang-en">Gallery</a></li>
                 <li><a href="#research" class="lang-zh">研究發表</a><a href="#research" class="lang-en">Research</a></li>
                 <li><a href="#documents" class="lang-zh">文件檔案</a><a href="#documents" class="lang-en">Documents</a></li>
@@ -1008,7 +1116,7 @@
                 </p>
                     <div class="hero-stats">
                     <div class="stat">
-                        <span class="stat-number">100000+</span>
+                        <span class="stat-number">10000+</span>
                         <span class="stat-label lang-zh">每月語言學習軟體累積使用人數</span>
                         <span class="stat-label lang-en">Monthly Users of Language-learning Tools</span>
                     </div>
@@ -1384,6 +1492,144 @@
         </div>
     </section>
 
+    <!-- AI Tools Section -->
+    <section id="ai-tools" class="ai-tools">
+        <div class="section-header fade-in">
+            <h2 class="lang-zh">AI 語言學習工具</h2>
+            <h2 class="lang-en">AI Tools & Live Demos</h2>
+            <p class="lang-zh">結合語言教學、測驗生成與即時回饋的網頁工具</p>
+            <p class="lang-en">Language-learning products that connect pedagogy, assessment, and AI feedback</p>
+        </div>
+
+        <div class="ai-tools-grid">
+            <article class="ai-tool-card fade-in">
+                <div class="tool-preview">
+                    <img src="images/cooltutor-ai-demo.png" alt="CoolTutor AI live demo screenshot">
+                </div>
+                <div class="ai-tool-body">
+                    <h3>CoolTutor AI</h3>
+                    <p class="lang-zh">面向英語學習者的 AI 家教工具，支援語法說明、學習引導與互動練習。</p>
+                    <p class="lang-en">An AI tutoring interface for English learners, built for grammar explanation, guided support, and interactive practice.</p>
+                    <div class="tool-tags">
+                        <span class="tag">AI Tutor</span>
+                        <span class="tag">English Learning</span>
+                        <span class="tag">Interactive Feedback</span>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="https://cooltutor-ai-j75ecywwya-de.a.run.app" target="_blank" class="tool-link">
+                            <i class="fas fa-play"></i> <span class="lang-zh">開啟 Demo</span><span class="lang-en">Launch Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="ai-tool-card fade-in">
+                <div class="tool-preview">
+                    <img src="images/qgen-ai-demo.png" alt="Qgen AI live demo screenshot">
+                </div>
+                <div class="ai-tool-body">
+                    <h3>Qgen AI</h3>
+                    <p class="lang-zh">協助教師從閱讀文本快速生成題目、選項與教學活動，降低備課負擔。</p>
+                    <p class="lang-en">A question-generation tool that helps teachers turn reading texts into assessment items and classroom activities.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Question Generation</span>
+                        <span class="tag">Assessment</span>
+                        <span class="tag">Teacher Workflow</span>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="https://qgenai-v3-j75ecywwya-de.a.run.app" target="_blank" class="tool-link">
+                            <i class="fas fa-play"></i> <span class="lang-zh">開啟 Demo</span><span class="lang-en">Launch Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="ai-tool-card fade-in">
+                <div class="tool-preview">
+                    <img src="images/esl-material-studio-demo.png" alt="ESL Material Studio live demo screenshot">
+                </div>
+                <div class="ai-tool-body">
+                    <h3>ESL Material Studio</h3>
+                    <p class="lang-zh">AI 教材產生器，可由檔案或主題生成課堂講義、練習活動與教師可編輯素材。</p>
+                    <p class="lang-en">An AI-powered teaching material generator that turns files or topics into handouts, exercises, and editable classroom resources.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Material Design</span>
+                        <span class="tag">Lesson Planning</span>
+                        <span class="tag">Teacher Resources</span>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="https://esl-material-studio-j75ecywwya-de.a.run.app" target="_blank" class="tool-link">
+                            <i class="fas fa-play"></i> <span class="lang-zh">開啟 Demo</span><span class="lang-en">Launch Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="ai-tool-card fade-in">
+                <div class="tool-preview">
+                    <img src="images/essay-marking-demo.png" alt="Essay Marking live demo screenshot">
+                </div>
+                <div class="ai-tool-body">
+                    <h3>Essay Marking</h3>
+                    <p class="lang-zh">支援手寫作文、PDF、Word 與直接輸入，提供 AI 作文診斷與中英雙語回饋。</p>
+                    <p class="lang-en">A writing feedback platform that supports handwritten essays, PDF/Word uploads, direct input, and bilingual diagnostic feedback.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Writing Feedback</span>
+                        <span class="tag">Essay Assessment</span>
+                        <span class="tag">Bilingual Comments</span>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="https://essay-marking-j75ecywwya-de.a.run.app" target="_blank" class="tool-link">
+                            <i class="fas fa-play"></i> <span class="lang-zh">開啟 Demo</span><span class="lang-en">Launch Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="ai-tool-card fade-in">
+                <div class="tool-preview">
+                    <img src="images/tts-gemini-studio-demo.png" alt="TTS Gemini Studio live demo screenshot">
+                </div>
+                <div class="ai-tool-body">
+                    <h3>TTS Gemini Studio</h3>
+                    <p class="lang-zh">使用 Gemini Flash TTS 生成英語語音，支援多種聲線、客製化語音與對話生成。</p>
+                    <p class="lang-en">A Gemini Flash TTS studio for English audio generation, with multiple voices, customized narration, and dialogue output.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Text-to-Speech</span>
+                        <span class="tag">Listening Materials</span>
+                        <span class="tag">Dialogue Audio</span>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="https://tts-gemini-studio-j75ecywwya-de.a.run.app" target="_blank" class="tool-link">
+                            <i class="fas fa-play"></i> <span class="lang-zh">開啟 Demo</span><span class="lang-en">Launch Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="ai-tool-card fade-in">
+                <div class="tool-preview">
+                    <img src="images/lexicollocate-demo.png" alt="LexiCollocate live demo screenshot">
+                </div>
+                <div class="ai-tool-body">
+                    <h3>LexiCollocate</h3>
+                    <p class="lang-zh">學術詞彙與搭配詞查詢工具，協助學習者探索詞彙用法與寫作搭配。</p>
+                    <p class="lang-en">A lexicographic research assistant for academic vocabulary, collocations, and writing-oriented word use.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Collocation</span>
+                        <span class="tag">Academic Vocabulary</span>
+                        <span class="tag">Corpus-informed</span>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="https://lexicollocate-j75ecywwya-de.a.run.app" target="_blank" class="tool-link">
+                            <i class="fas fa-play"></i> <span class="lang-zh">開啟 Demo</span><span class="lang-en">Launch Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
     <!-- Research Section -->
     <section id="research" style="background: white;">
         <div class="section-header fade-in">
@@ -1392,6 +1638,14 @@
         </div>
         
         <div class="fade-in">
+            <h3 class="research-category">Published Paper</h3>
+            <div class="research-item">
+                <h3>Styles and stereotypes: English and translingual practices in the neoliberal era</h3>
+                <div class="research-meta">Applied Linguistics Review | DOI: 10.1515/applirev-2024-0193</div>
+                <p>Liang, M., Wang, C., &amp; Lee, S. (). Styles and stereotypes: English and translingual practices in the neoliberal era. <em>Applied Linguistics Review</em>. <a href="https://doi.org/10.1515/applirev-2024-0193" target="_blank" style="color: var(--primary);">https://doi.org/10.1515/applirev-2024-0193 <i class="fas fa-external-link-alt"></i></a></p>
+            </div>
+
+            <h3 class="research-category">Conference Presentations</h3>
             <div class="research-item">
                 <h3>Language Ideologies toward Taiwan's 2030 Bilingual Policy: Online Perception and Realities on the Ground</h3>
                 <div class="research-meta">Bilingual Matters Symposium 2025, University of Edinburgh (Virtual) | Mar 2025</div>
