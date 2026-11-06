@@ -16,10 +16,10 @@
 
     <style>
         :root {
-            --primary: #0f4c81;     /* Classic Blue - Academic & Trust */
+            --primary: #8c2f39;     /* Burgundy - Academic & Warmth */
             --secondary: #c9a961;   /* Gold - Excellence */
-            --accent: #2a9d8f;      /* Teal - Language/Education */
-            --dark: #1a1a2e;
+            --accent: #c4553f;      /* Terracotta - Language/Education */
+            --dark: #2b1a1f;
             --light: #f8f9fa;
             --text: #333333;
             --text-light: #666666;
@@ -138,7 +138,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #faf5f3 0%, #e8cfc8 100%);
             position: relative;
             overflow: hidden;
             padding-top: 80px;
@@ -235,7 +235,7 @@
         .btn-primary {
             background: var(--primary);
             color: white;
-            box-shadow: 0 4px 15px rgba(15, 76, 129, 0.3);
+            box-shadow: 0 4px 15px rgba(140, 47, 57, 0.3);
         }
 
         .btn-primary:hover {
@@ -354,8 +354,8 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
+            gap: 2rem;
+            align-items: stretch;
         }
 
         .about-content h3 {
@@ -382,6 +382,16 @@
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
+
+        .about-content { display: flex; flex-direction: column; gap: 2rem; }
+        .about-content .highlight-box { margin-top: 0; }
+        .about-content .highlight-box:last-child { flex: 1; }
+        .about-content .highlight-box p { color: white; font-size: 0.95rem; text-align: left; margin-bottom: 1rem; }
+        .about-content .highlight-box p:last-child { margin-bottom: 0; }
+        .adv-list { list-style: none; }
+        .adv-list li { margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.7; }
+        .adv-list li:last-child { margin-bottom: 0; }
+        .adv-list strong { color: var(--secondary); }
 
         .credentials-list {
             list-style: none;
@@ -470,6 +480,10 @@
             display: block;
         }
 
+        .timeline-content .institution.lang-en { display: none; }
+        body.english .timeline-content .institution.lang-en { display: block; }
+        body.english .timeline-content .institution.lang-zh { display: none; }
+
         .timeline-content .details {
             color: var(--text-light);
             font-size: 0.95rem;
@@ -478,7 +492,7 @@
 
         .tag {
             display: inline-block;
-            background: rgba(42, 157, 143, 0.1);
+            background: rgba(196, 85, 63, 0.1);
             color: var(--accent);
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
@@ -548,7 +562,7 @@
 
         /* AI Tools Section */
         .ai-tools {
-            background: #eef4f8;
+            background: #f8eeeb;
         }
 
         .ai-tools-grid {
@@ -562,21 +576,21 @@
 
         .ai-tool-card {
             background: white;
-            border: 1px solid rgba(15, 76, 129, 0.12);
+            border: 1px solid rgba(140, 47, 57, 0.12);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 12px 35px rgba(15, 76, 129, 0.08);
+            box-shadow: 0 12px 35px rgba(140, 47, 57, 0.08);
             transition: var(--transition);
         }
 
         .ai-tool-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 18px 45px rgba(15, 76, 129, 0.14);
+            box-shadow: 0 18px 45px rgba(140, 47, 57, 0.14);
         }
 
         .tool-preview {
             min-height: 230px;
-            background: linear-gradient(135deg, #0f4c81 0%, #2a9d8f 100%);
+            background: linear-gradient(135deg, #8c2f39 0%, #c4553f 100%);
             padding: 1.2rem;
             display: flex;
             align-items: stretch;
@@ -588,7 +602,7 @@
             object-fit: cover;
             object-position: top center;
             border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(15, 76, 129, 0.22);
+            box-shadow: 0 10px 25px rgba(140, 47, 57, 0.22);
         }
 
         .ai-tool-body {
@@ -723,6 +737,35 @@
             border-radius: 15px;
             font-size: 0.8rem;
         }
+
+        /* View-only document viewer */
+        .doc-viewer {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 3rem 1rem;
+        }
+        .doc-viewer.active { display: block; }
+        .doc-pages {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .doc-page { position: relative; margin-bottom: 1rem; line-height: 0; }
+        .doc-page img {
+            width: 100%;
+            height: auto;
+            background: white;
+            border-radius: 4px;
+            pointer-events: none;
+            -webkit-user-drag: none;
+        }
+        .doc-page::after { content: ''; position: absolute; inset: 0; } /* blocks drag/long-press on the image */
+        .doc-viewer, .doc-viewer * { user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+        @media print { .doc-viewer { display: none !important; } }
 
         /* Research Section */
         .research-item {
@@ -872,7 +915,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(15, 76, 129, 0.9), transparent);
+            background: linear-gradient(to top, rgba(140, 47, 57, 0.9), transparent);
             padding: 1.5rem 1rem 1rem;
             color: white;
             opacity: 0;
@@ -989,7 +1032,7 @@
 
         /* Footer */
         footer {
-            background: #0f0f1e;
+            background: #1f1014;
             color: rgba(255,255,255,0.6);
             text-align: center;
             padding: 2rem;
@@ -1058,6 +1101,36 @@
                 left: -30px;
             }
         }
+
+        /* Education | Experience side by side */
+        .two-col {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: stretch;
+        }
+        #experience { scroll-margin-top: 5rem; }
+        .two-col > div { display: flex; flex-direction: column; }
+        .two-col .timeline-container { flex: 1; display: flex; flex-direction: column; width: 100%; }
+        .two-col .timeline-item { flex: 1 1 auto; grid-template-rows: auto 1fr; }
+        .two-col .timeline-content { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+        .two-col > div:first-child .details { font-size: 1.1rem; line-height: 1.95; }
+        .two-col > div:first-child .timeline-content h3 { font-size: 1.35rem; }
+        .two-col > div:first-child .timeline-content { padding: 1.75rem 2rem; }
+        .earlier-list { list-style: none; color: var(--text-light); font-size: 0.95rem; }
+        .earlier-list li { margin-bottom: 0.6rem; line-height: 1.7; }
+        .earlier-list li:last-child { margin-bottom: 0; }
+        .earlier-list b { color: var(--secondary); font-weight: 600; margin-right: 0.4rem; }
+        .two-col .section-header { margin-bottom: 2rem; }
+        .two-col .section-header h2 { font-size: 2rem; }
+        .two-col .timeline-item { grid-template-columns: 1fr; gap: 0.4rem; margin-bottom: 1.25rem; }
+        .two-col .timeline-item::before, .two-col .timeline-content::before { display: none; }
+        .two-col .timeline-date { text-align: left; }
+        .two-col .timeline-content { margin-left: 0; padding: 1.25rem 1.5rem; }
+        .two-col .timeline-content h3 { font-size: 1.1rem; }
+        @media (max-width: 1000px) { .two-col { grid-template-columns: 1fr; } }
 
         /* Loading Animation */
         .fade-in {
@@ -1191,9 +1264,10 @@
         
         <div class="about-grid">
             <div class="about-content fade-in">
-                <h3 class="lang-zh">教學理念&專業</h3>
-                <h3 class="lang-en">Teaching Philosophy & Professionalism</h3>
-                <p class="lang-zh">
+                <div class="highlight-box">
+                    <h4 class="lang-zh"><i class="fas fa-chalkboard-teacher"></i> 教學理念 & 專業</h4>
+                    <h4 class="lang-en"><i class="fas fa-chalkboard-teacher"></i> Teaching Philosophy & Professionalism</h4>
+                    <p class="lang-zh">
                     全心投入語言教學及研究的華語和英語老師。英語教學經驗七年，教學對象涵蓋國中到成人；內容從基礎文法到學術寫作到證照考試；除現場教學亦參與編撰題目、教學軟體SaaS 設計、AI 融入語言教/學。年輕有活力且負責任，教學注重互動及口說，並自編文法生詞整理教材。
                 </p>
                 <p class="lang-en">
@@ -1205,9 +1279,7 @@
                 <p class="lang-en">
                     I aim to integrate suitable linguistic theories with teaching methodologies to provide efficient and enjoyable learning experiences. Currently exploring the integration of English as a Medium of Instruction (EMI) and Problem-Based Learning (PBL) at National Central University. Working on computer assisted language learning (CALL) in National Taiwan Normal University with a view to integrating AI in language learning and teaching.
                 </p>
-            </div>
-            
-            <div class="about-content fade-in">
+                </div>
                 <div class="highlight-box">
                     <h4 class="lang-zh"><i class="fas fa-star"></i> 核心專長</h4>
                     <h4 class="lang-en"><i class="fas fa-star"></i> Core Expertise</h4>
@@ -1232,9 +1304,52 @@
                             <span class="lang-zh">英文為授課語言 (EMI)</span>
                             <span class="lang-en">English as a Medium of Instruction (EMI)</span>
                         </li>
-                        <li><i class="fas fa-check-circle"></i> 
-                            <span class="lang-zh">R語言統計與多層次模型</span>
-                            <span class="lang-en">R Statistics & Multi-level Modeling</span>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="about-content fade-in">
+                <div class="highlight-box">
+                    <h4 class="lang-zh"><i class="fas fa-medal"></i> 核心競爭優勢</h4>
+                    <h4 class="lang-en"><i class="fas fa-medal"></i> Core Competitive Strengths</h4>
+                    <ul class="adv-list">
+                        <li>
+                            <span class="lang-zh"><strong>一、三棲稀缺組合</strong> 7 年語言教學實務（累計 500+ 名學生）＋ 愛丁堡大學應用語言學碩士研究訓練（SSCI 期刊發表）＋ 20+ 個 AI 語言學習工具開發，三者交叉正是語言教育科技最稀缺的人才輪廓。</span>
+                            <span class="lang-en"><strong>1. A rare three-way combination</strong> Seven years of teaching practice (500+ students) + Edinburgh applied-linguistics research training (SSCI publication) + 20+ AI language-learning tools: the intersection is the rarest profile in language-education technology.</span>
+                        </li>
+                        <li>
+                            <span class="lang-zh"><strong>二、把教學問題轉化為可運作的產品</strong> 從學習者需求分析、課程與評量設計，到 AI 工具實作與雲端部署，具備端到端獨立交付能力；工具每月服務 10,000+ 名學習者。</span>
+                            <span class="lang-en"><strong>2. Turning teaching problems into working products</strong> End-to-end delivery from needs analysis and course/assessment design to AI tool implementation and cloud deployment; the tools serve 10,000+ learners every month.</span>
+                        </li>
+                        <li>
+                            <span class="lang-zh"><strong>三、量化驗證能力</strong> 多益 TOEIC 990、雅思 IELTS 8.0；能以 R 執行多層次模型（MLM）與變異數分析，用實證數據檢驗教學介入成效，而非僅憑經驗判斷。</span>
+                            <span class="lang-en"><strong>3. Quantitative validation</strong> TOEIC 990 and IELTS 8.0; uses R for multi-level modeling (MLM) and ANOVA to test the effect of teaching interventions with evidence rather than intuition.</span>
+                        </li>
+                        <li>
+                            <span class="lang-zh"><strong>四、英語與華語雙軌、跨文化即戰力</strong> 中文母語、英文 C2、西班牙文 A2；持教育部對外華語教學能力證書，曾赴西班牙交換，能直接面對不同語言背景的學習者。</span>
+                            <span class="lang-en"><strong>4. Dual English–Chinese teaching, cross-cultural ready</strong> Native Chinese, English C2, Spanish A2; holds the MOE TCSL certificate and studied abroad in Spain, so can work directly with learners from different language backgrounds.</span>
+                        </li>
+                        <li>
+                            <span class="lang-zh"><strong>五、研究與實務雙軌並進</strong> SSCI 期刊論文 1 篇、國際研討會論文 4 篇、媒體評論 2 篇；研究直接回饋到課程設計、教材編寫與教學決策。</span>
+                            <span class="lang-en"><strong>5. Research and practice in parallel</strong> One SSCI paper, four international conference papers and two media commentaries; research feeds directly into course design, materials and teaching decisions.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="highlight-box">
+                    <h4 class="lang-zh"><i class="fas fa-trophy"></i> 獎項與獎學金（累計逾 NT$226,000）</h4>
+                    <h4 class="lang-en"><i class="fas fa-trophy"></i> Awards & Scholarships (over NT$226,000 in total)</h4>
+                    <ul class="credentials-list">
+                        <li><i class="fas fa-check-circle"></i>
+                            <span class="lang-zh">學海飛鷹獎學金 NT$96,000（教育部）</span>
+                            <span class="lang-en">Study Abroad Scholarship (MOE) NT$96,000</span>
+                        </li>
+                        <li><i class="fas fa-check-circle"></i>
+                            <span class="lang-zh">朱順一合勤獎學金 NT$100,000</span>
+                            <span class="lang-en">Chu Shun-Yi Compal Scholarship NT$100,000</span>
+                        </li>
+                        <li><i class="fas fa-check-circle"></i>
+                            <span class="lang-zh">書卷獎 ×6 NT$30,000</span>
+                            <span class="lang-en">Dean's List ×6 NT$30,000</span>
                         </li>
                     </ul>
                 </div>
@@ -1244,6 +1359,8 @@
 
     <!-- Education Section -->
     <section id="education" style="background: #f8f9fa;">
+      <div class="two-col">
+       <div>
         <div class="section-header fade-in">
             <h2 class="lang-zh">教育背景</h2>
             <h2 class="lang-en">Education</h2>
@@ -1251,7 +1368,7 @@
         
         <div class="timeline-container">
             <div class="timeline-item fade-in">
-                <div class="timeline-date">2023 - 2024</div>
+                <div class="timeline-date">2023/09 - 2024/08</div>
                 <div class="timeline-content">
                     <span class="institution">The University of Edinburgh, UK</span>
                     <h3 class="lang-zh">應用語言學碩士 (MSc Applied Linguistics)</h3>
@@ -1259,13 +1376,15 @@
                     <p class="details lang-zh">
                         畢業等級：優良 (Merit)<br>
                         論文：台灣2030雙語政策的語言意識形態研究（獲高度評價畢業論文獎）<br>
-                        專修：語料庫輔助論述分析、社會語言學、二語習得
+                        專修：語料庫輔助論述分析、社會語言學、二語習得<br>
+                        成果：論文成果於 Bilingual Matters Symposium 2025（愛丁堡，線上）發表
                     </p>
                     <p class="details lang-en">
                         Degree Classification: Merit<br>
                         Dissertation: Language Ideologies toward Taiwan's 2030 Bilingual Policy<br>
                         Award: Highly Commended Dissertation Award<br>
-                        Focus: Corpus-assisted discourse analysis, sociolinguistics, SLA
+                        Focus: Corpus-assisted discourse analysis, sociolinguistics, SLA<br>
+                        Outcome: Presented at Bilingual Matters Symposium 2025 (Edinburgh, virtual)
                     </p>
                     <span class="tag">Merit</span>
                     <span class="tag">Dissertation Award</span>
@@ -1273,31 +1392,31 @@
             </div>
             
             <div class="timeline-item fade-in">
-                <div class="timeline-date">2022 - 2023</div>
+                <div class="timeline-date">2022/09 - 2023/02</div>
                 <div class="timeline-content">
                     <span class="institution">La Universidad de Deusto, Spain</span>
                     <h3 class="lang-zh">現代語言學位交換 (Modern Language Exchange)</h3>
                     <h3 class="lang-en">Modern Language Exchange Program</h3>
-                    <p class="details lang-zh">西班牙語言與文化研習</p>
-                    <p class="details lang-en">Spanish language and cultural studies</p>
+                    <p class="details lang-zh">現代語言學系交換；西班牙語言與文化研習<br>成果：西班牙文 A2，累積跨文化學習經驗</p>
+                    <p class="details lang-en">Exchange in the Modern Languages department; Spanish language and cultural studies<br>Outcome: Spanish A2 and cross-cultural learning experience</p>
                     <span class="tag">Spanish A2</span>
                     <span class="tag">Cultural Exchange</span>
                 </div>
             </div>
             
             <div class="timeline-item fade-in">
-                <div class="timeline-date">2019 - 2023</div>
+                <div class="timeline-date">2019/09 - 2023/06</div>
                 <div class="timeline-content">
                     <span class="institution">National Central University, Taiwan</span>
                     <h3 class="lang-zh">英美文學學士 (BA in English)</h3>
                     <h3 class="lang-en">Bachelor of Arts in English</h3>
                     <p class="details lang-zh">
-                        GPA: 4.25/4.3（書卷獎 x6）<br>
+                        GPA: 4.25/4.3（全系第一畢業；書卷獎 x6）<br>
                         雙專長：華語文教學學分學程（2025年取得教育部對外華語教學能力證書）<br>
                         榮譽：斐陶斐榮譽學會會員 (Phi Tau Phi)
                     </p>
                     <p class="details lang-en">
-                        GPA: 4.25/4.3 (Dean's List x6)<br>
+                        GPA: 4.25/4.3 (Top graduate of the department; Dean's List x6)<br>
                         Minor: Teaching Chinese as a Second Language (TCSL Certificate)<br>
                         Honors: Phi Tau Phi Scholastic Honor Society
                     </p>
@@ -1307,10 +1426,10 @@
                 </div>
             </div>
         </div>
-    </section>
+       </div>
 
-    <!-- Experience Section -->
-    <section id="experience" style="background: white;">
+       <div id="experience">
+        <!-- Experience Section -->
         <div class="section-header fade-in">
             <h2 class="lang-zh">工作經歷</h2>
             <h2 class="lang-en">Professional Experience</h2>
@@ -1320,37 +1439,61 @@
             <div class="timeline-item fade-in">
                 <div class="timeline-date">2025 - Present</div>
                 <div class="timeline-content">
+                    <span class="institution lang-zh">教育部教學實踐研究計畫</span>
+                    <span class="institution lang-en">MOE Teaching Practice Research Project</span>
+                    <h3 class="lang-zh">外部諮詢專家</h3>
+                    <h3 class="lang-en">External Consultant</h3>
+                    <p class="details lang-zh">融入問題導向教學（PBL）於 EMI 課程「線性系統」，提升學生英語學術口說與自信（NTD. 500,000，進行中）。</p>
+                    <p class="details lang-en">Incorporating Problem-Based Learning (PBL) into the EMI course "Linear System" to improve students' academic English speaking and confidence (NTD. 500,000, ongoing).</p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2025/06 - 2025/10</div>
+                <div class="timeline-content">
+                    <span class="institution lang-zh">台灣蒙地拿股份有限公司</span>
+                    <span class="institution lang-en">Montana Taiwan Co., Ltd.</span>
+                    <h3 class="lang-zh">企業多益約聘教師</h3>
+                    <h3 class="lang-en">Contract TOEIC Instructor (Corporate)</h3>
+                    <p class="details lang-zh">規劃 3 個月、10 人班的多益 700 分衝刺課程。</p>
+                    <p class="details lang-en">Planned a 3-month TOEIC 700-point intensive course for a 10-person corporate class.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2025/04 - Present</div>
+                <div class="timeline-content">
                     <span class="institution lang-zh">菁英語言教育中心 & 半熟語言所｜正式教師</span>
                     <span class="institution lang-en">Elite Language Education Center & Half-cooked Language Institute</span>
                     <h3 class="lang-zh">英語教師</h3>
                     <h3 class="lang-en">English Instructor</h3>
                     <p class="details lang-zh">
-                        線上精緻整合式英文課、課後批改作業、課前編輯整合式教材。實體/線上英語詞彙、寫作、閱讀、文法、多益教師。
+                        線上 / 實體整合式英文課程（詞彙、寫作、閱讀、文法、多益），單場線上課程最多 80 人、實體 30 人同步；自編整合式教材。
                     </p>
                     <p class="details lang-en">
-                        Online integrated English courses, assignment grading, and material design. Teaching vocabulary, writing, reading, grammar, and TOEIC preparation.
+                        Online and in-person integrated English courses (vocabulary, writing, reading, grammar, TOEIC), with up to 80 online and 30 in-person students per session; self-developed materials.
                     </p>
                 </div>
             </div>
             
             <div class="timeline-item fade-in">
-                <div class="timeline-date">2025 - Present</div>
+                <div class="timeline-date">2025/04 - Present</div>
                 <div class="timeline-content">
                     <span class="institution">National Taiwan Normal University</span>
                     <h3 class="lang-zh">酷英平台碩士級專任助理</h3>
                     <h3 class="lang-en">Research Assistant, CoolEnglish Platform</h3>
                     <p class="details lang-zh">
-                        維護、建置、發想、設計教育部國教署酷英(CoolEnglish)英語線上學習平台大專部課程及語言學習軟體；AI應用語言教學。
+                        設計、建置與維護國教署酷英(CoolEnglish)英語線上學習平台大專部課程；開發 20+ 個 AI 語言學習工具（CoolTutor AI、Qgen AI、ESL Material Studio、Essay Marking 等），每月服務 10,000+ 名學習者。
                     </p>
                     <p class="details lang-en">
-                        Maintainning, devising, developing, designing university-level courses for MOE CoolEnglish platform and developing web-based tool for AI integration. AI applications in language teaching.
+                        Designing, building and maintaining university-level courses for the MOE CoolEnglish platform; developed 20+ AI language-learning tools (CoolTutor AI, Qgen AI, ESL Material Studio, Essay Marking, etc.) serving 10,000+ learners per month.
                     </p>
                     <span class="tag">AI in Education</span>
                 </div>
             </div>
             
             <div class="timeline-item fade-in">
-                <div class="timeline-date">2025 - Present</div>
+                <div class="timeline-date">2025/03 - Present</div>
                 <div class="timeline-content">
                     <span class="institution">TKB Taiwan Knowledge Bank</span>
                     <h3 class="lang-zh">洋碩美語正式教師</h3>
@@ -1361,20 +1504,25 @@
             </div>
             
             <div class="timeline-item fade-in">
-                <div class="timeline-date">2022 - 2023</div>
+                <div class="timeline-date">2021/11 - 2024</div>
                 <div class="timeline-content">
-                    <span class="institution">National Central University</span>
-                    <h3 class="lang-zh">網路語言研究助理</h3>
-                    <h3 class="lang-en">Research Assistant</h3>
-                    <p class="details lang-zh">
-                        收集、分析、注譯、翻譯網路流行語，包含交際、象徵語、語用措辭，跨語文化風格展演；文獻研究與摘要撰寫。
-                    </p>
-                    <p class="details lang-en">
-                        Collected and analyzed internet slang and digital discourse; cross-cultural stylistic analysis; literature review and annotation.
-                    </p>
+                    <h3 class="lang-zh">更早經歷</h3>
+                    <h3 class="lang-en">Earlier Experience</h3>
+                    <ul class="earlier-list lang-zh">
+                        <li><b>2022/08–2023/08</b> 中央大學文學院｜網路語言研究助理：收集、分析網路流行語與跨語文化風格展演</li>
+                        <li><b>2022–2024</b> 中央大學語言中心｜華語教師 / 助教（Project Go，暑期日本學生華語密集課）</li>
+                        <li><b>2021/11–2023/08</b> 逗點教室 & 向品私人補習班｜英語教師：國高中一對一 / 團班課程、批改模擬考作文</li>
+                    </ul>
+                    <ul class="earlier-list lang-en">
+                        <li><b>2022/08–2023/08</b> NCU College of Humanities | Research Assistant: collected and analyzed internet slang and cross-cultural stylistic performance</li>
+                        <li><b>2022–2024</b> NCU Language Center | Chinese Instructor / TA (Project Go, summer intensive for Japanese students)</li>
+                        <li><b>2021/11–2023/08</b> Douhao Classroom & Xiangpin Cram School | English Instructor: one-on-one and group classes for secondary students, mock-exam essay grading</li>
+                    </ul>
                 </div>
             </div>
         </div>
+       </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
@@ -1414,10 +1562,10 @@
                     <div class="skill-header">
                         <span class="lang-zh">西班牙文</span>
                         <span class="lang-en">Spanish</span>
-                        <span>B1</span>
+                        <span>A2</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 40%"></div>
+                        <div class="skill-progress" style="width: 30%"></div>
                     </div>
                 </div>
             </div>
@@ -1638,11 +1786,11 @@
         </div>
         
         <div class="fade-in">
-            <h3 class="research-category">Published Paper</h3>
+            <h3 class="research-category">Published Paper (SSCI)</h3>
             <div class="research-item">
                 <h3>Styles and stereotypes: English and translingual practices in the neoliberal era</h3>
                 <div class="research-meta">Applied Linguistics Review | DOI: 10.1515/applirev-2024-0193</div>
-                <p>Liang, M., Wang, C., &amp; Lee, S. (). Styles and stereotypes: English and translingual practices in the neoliberal era. <em>Applied Linguistics Review</em>. <a href="https://doi.org/10.1515/applirev-2024-0193" target="_blank" style="color: var(--primary);">https://doi.org/10.1515/applirev-2024-0193 <i class="fas fa-external-link-alt"></i></a></p>
+                <p>Liang, M.-Y., Wang, C.-C., &amp; Lee, S. (2026). Styles and stereotypes: English and translingual practices in the neoliberal era. <em>Applied Linguistics Review</em>. <a href="https://doi.org/10.1515/applirev-2024-0193" target="_blank" style="color: var(--primary);">https://doi.org/10.1515/applirev-2024-0193 <i class="fas fa-external-link-alt"></i></a></p>
             </div>
 
             <h3 class="research-category">Conference Presentations</h3>
@@ -1674,6 +1822,12 @@
                 <h3 class="lang-en">Interview: The Reality of 2030 Bilingual Policy from Teachers' Perspective</h3>
                 <div class="research-meta">The News Lens 關鍵評論網 | July 2024</div>
                 <p><a href="https://www.thenewslens.com/article/205087" target="_blank" style="color: var(--primary);">View Article <i class="fas fa-external-link-alt"></i></a></p>
+            </div>
+            <div class="research-item">
+                <h3 class="lang-zh">【投書】怎樣講英文才對？談語言焦慮、語言歧視和語言自信</h3>
+                <h3 class="lang-en">Op-ed: Which English Is "Right"? On Language Anxiety, Linguistic Discrimination and Language Confidence</h3>
+                <div class="research-meta">獨立評論@天下 CommonWealth Opinion | Oct 2023</div>
+                <p><a href="https://opinion.cw.com.tw/blog/profile/52/article/14067" target="_blank" style="color: var(--primary);">View Article <i class="fas fa-external-link-alt"></i></a></p>
             </div>
         </div>
     </section>
@@ -1795,13 +1949,13 @@
         <div class="section-header fade-in">
             <h2 class="lang-zh">證照與文件</h2>
             <h2 class="lang-en">Certificates & Documents</h2>
-            <p class="lang-zh">點擊查看完整PDF檔案</p>
-            <p class="lang-en">Click to view full PDF documents</p>
+            <p class="lang-zh">點擊線上檢視完整文件（僅供瀏覽）</p>
+            <p class="lang-en">Click to view full documents (view only)</p>
         </div>
         
         <div class="doc-grid">
             <!-- CV -->
-            <a href="documents/CV_Roy.pdf" target="_blank" class="doc-card fade-in">
+            <a href="#documents" class="doc-card fade-in" onclick="openDoc('cv', 2, event)">
                 <div class="doc-preview">
                     <i class="fas fa-file-pdf"></i>
                 </div>
@@ -1810,13 +1964,13 @@
                     <h3 class="lang-en">Curriculum Vitae</h3>
                     <p class="lang-zh">詳細學經歷與專業技能</p>
                     <p class="lang-en">Detailed academic and professional background</p>
-                    <span class="doc-tag">PDF</span>
+                    <span class="doc-tag">View only</span>
                 </div>
             </a>
-            
+
             <!-- Certificates Combined -->
-            <a href="documents/certificates.pdf" target="_blank" class="doc-card fade-in">
-                <div class="doc-preview" style="background: linear-gradient(135deg, #2a9d8f 0%, #264653 100%);">
+            <a href="#documents" class="doc-card fade-in" onclick="openDoc('certificates', 7, event)">
+                <div class="doc-preview" style="background: linear-gradient(135deg, #c4553f 0%, #5a1f2b 100%);">
                     <i class="fas fa-certificate"></i>
                 </div>
                 <div class="doc-info">
@@ -1824,26 +1978,18 @@
                     <h3 class="lang-en">Certificates & Awards</h3>
                     <p class="lang-zh">愛丁堡學位證書、雅思、多益、斐陶斐等</p>
                     <p class="lang-en">Edinburgh degree, IELTS, TOEIC, Phi Tau Phi</p>
-                    <span class="doc-tag">Portfolio</span>
+                    <span class="doc-tag">View only</span>
                 </div>
             </a>
-            
-            <!-- Autobiography -->
-            <a href="documents/autobiography.pdf" target="_blank" class="doc-card fade-in">
-                <div class="doc-preview" style="background: linear-gradient(135deg, #e9c46a 0%, #f4a261 100%);">
-                    <i class="fas fa-user-edit"></i>
-                </div>
-                <div class="doc-info">
-                    <h3 class="lang-zh">履歷自傳</h3>
-                    <h3 class="lang-en">Cover Letter / Autobiography</h3>
-                    <p class="lang-zh">中英雙語自傳與求職信</p>
-                    <p class="lang-en">Bilingual cover letter and personal statement</p>
-                    <span class="doc-tag">CN/EN</span>
-                </div>
-            </a>
-            
+
         </div>
     </section>
+
+    <!-- View-only document viewer -->
+    <div id="doc-viewer" class="doc-viewer" onclick="if(event.target===this)closeDoc()">
+        <span class="lightbox-close" onclick="closeDoc()">&times;</span>
+        <div id="doc-pages" class="doc-pages"></div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -1885,10 +2031,10 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 王智城 Roy Wang. All Rights Reserved.</p>
+        <p>&copy; 2026 王智城 Roy Wang. All Rights Reserved.</p>
         <p style="margin-top: 0.5rem; font-size: 0.8rem;">
-            <span class="lang-zh">最後更新：2025年2月</span>
-            <span class="lang-en">Last Updated: February 2025</span>
+            <span class="lang-zh">最後更新：2026年11月</span>
+            <span class="lang-en">Last Updated: November 2026</span>
         </p>
     </footer>
 
@@ -1975,7 +2121,37 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeLightbox();
+                closeDoc();
             }
+        });
+
+        // View-only documents: pages are images (no text layer, no PDF file served).
+        // shortcut: deters casual save/copy only; screenshots can't be prevented on a static site.
+        function openDoc(name, pages, e) {
+            e.preventDefault();
+            const box = document.getElementById('doc-pages');
+            box.innerHTML = '';
+            for (let i = 1; i <= pages; i++) {
+                const d = document.createElement('div');
+                d.className = 'doc-page';
+                d.innerHTML = '<img src="documents/' + name + '/' + i + '.jpg" alt="' + name + ' page ' + i + '" draggable="false">';
+                box.appendChild(d);
+            }
+            const v = document.getElementById('doc-viewer');
+            v.classList.add('active');
+            v.scrollTop = 0;
+            document.body.style.overflow = 'hidden';
+        }
+        function closeDoc() {
+            document.getElementById('doc-viewer').classList.remove('active');
+            document.getElementById('doc-pages').innerHTML = '';
+            document.body.style.overflow = 'auto';
+        }
+        const docOpen = () => document.getElementById('doc-viewer').classList.contains('active');
+        ['contextmenu', 'dragstart', 'copy', 'cut'].forEach(t =>
+            document.addEventListener(t, e => { if (docOpen()) e.preventDefault(); }));
+        document.addEventListener('keydown', e => {
+            if (docOpen() && (e.ctrlKey || e.metaKey) && ['s', 'p', 'c', 'a', 'u'].includes(e.key.toLowerCase())) e.preventDefault();
         });
 
     </script>
